@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import {getUSerMainData } from "../../Api/apiCalls";
 
+//Component
+import Navbar from "../../Components/Navbar";
+
 function MainDataComponent() {
   const [userMainData, setUserMainData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
@@ -24,6 +27,7 @@ function MainDataComponent() {
   const { firstName, lastName, age } = userMainData.userInfos;
   return (
     <div>
+      <Navbar />
       <h1> {lastName} {firstName} {age} ans</h1>
     </div>
   )
