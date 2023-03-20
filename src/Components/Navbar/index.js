@@ -15,7 +15,7 @@ const Navbar = () => {
             <ul className='navbar__list'>
                 {label.map((item, index) => {
                     return (
-                        <li className="navbar__list-item" key={index}>{item}</li>
+                        <li className="navbar__list-item" key={index}><a href='/'>{item}</a></li>
                     )
                 }
                 )}

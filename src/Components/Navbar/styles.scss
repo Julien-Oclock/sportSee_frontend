@@ -3,7 +3,7 @@
 .navbar{
     background-color: $black;
     color : white;
-    height: 100px;
+    height: 11vh;
     width: 100vw;
     display: flex;
     align-items: center;
@@ -24,6 +24,7 @@
         width: 100%;
         justify-content: space-evenly;
     }
+
     &__list-item{
         text-decoration: none;
         list-style: none;

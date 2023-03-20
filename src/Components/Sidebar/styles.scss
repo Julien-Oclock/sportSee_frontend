@@ -1,0 +1,30 @@
+@import '../../assets/sass/config.scss';
+
+.sidebar{
+    background-color: $black;
+    height: 89vh;
+    color : white;
+    width: 120px;
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__logo-container{
+    }
+
+    &__logo-item{
+        padding: 15px;
+        cursor: pointer;
+    }
+
+    &__text{
+        position: absolute;
+        bottom: 100px;
+        transform: rotate(270deg);
+        font-size: 12px;
+        width: 150px;
+    }
+
+}

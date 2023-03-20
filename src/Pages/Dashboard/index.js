@@ -3,6 +3,7 @@ import {getUSerMainData } from "../../Api/apiCalls";
 
 //Component
 import Navbar from "../../Components/Navbar";
+import Sidebar from "../../Components/Sidebar";
 
 function MainDataComponent() {
   const [userMainData, setUserMainData] = useState({});
@@ -28,6 +29,7 @@ function MainDataComponent() {
   return (
     <div>
       <Navbar />
+      <Sidebar />
       <h1> {lastName} {firstName} {age} ans</h1>
     </div>
   )
