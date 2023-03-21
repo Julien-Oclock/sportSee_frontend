@@ -1,0 +1,37 @@
+@import '../../assets/sass/config.scss';
+
+.main{
+    margin-left: 120px;
+
+    &__title-wrapper{
+        margin-left: 100px;
+    }
+
+    &__title-item{
+        font-size: 48px;
+        font-weight: 500;
+        margin: 30px 0px;
+    }
+
+    &__firstname{
+        color : $red;
+    }
+}
+
+.dashboard{
+    margin-left: 100px;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+
+    &__graph{
+        width: 70%;  
+    }
+
+    &__cards{
+        width: 25%;
+        display: flex;
+        flex-direction: column;
+        gap : 15px;    
+    }
+}

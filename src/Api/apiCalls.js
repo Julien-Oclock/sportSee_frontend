@@ -24,7 +24,7 @@ const getUSerMainData = async (id) => {
 }
 
 const getUserActivity = async (id) => {
-    const response = await api.get(`/users/${id}/activity`)
+    const response = await api.get(`/user/${id}/activity`)
         .then((res) => res.data)
         .catch((err) => console.log(err));
     const activityData = response.data;

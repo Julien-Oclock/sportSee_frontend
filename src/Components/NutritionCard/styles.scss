@@ -1,0 +1,43 @@
+@import '../../assets/sass/config.scss';
+
+.card{
+    background-color: $light-grey;
+    width: 250px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+
+
+    &__img{
+        width: 64px;
+        height: 64px;
+        margin: 32px;
+    }
+
+    &__value{
+        margin-top : 5px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 24px;
+        color: #282D30;
+    }
+
+    &__type{
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 24px;
+        color: #74798C;
+    }
+}
+
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
