@@ -27,7 +27,8 @@ const CustomTooltip = ({ active, payload }) => {
 
 const WeightGraph = ({ sessions }) => {    
     return (
-    <div>
+    <div className="weight-wrapper">
+    <h3 className="weight-title">Activité quotidienne</h3>
     <ResponsiveContainer className="weight-graph" width={"100%"} height={350}>
       <BarChart
         barGap={10}
@@ -74,7 +75,10 @@ const WeightGraph = ({ sessions }) => {
             background: "#E60000",
             border: "none",
             outline: "none",
-            marginLeft: 30,
+            position: "absolute",
+            top: "50%",
+            left: "0",
+            fontSize: '9px'
           }}
           content={<CustomTooltip />}
         />

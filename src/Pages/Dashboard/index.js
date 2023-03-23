@@ -17,16 +17,20 @@ import NutritionCard from "../../Components/NutritionCard";
 
 // graph
 import WeightGraph from "../../Components/Graph/WeightGraph";
+import GoalChart from "../../Components/Graph/GoalGraph";
 
 function MainDataComponent() {
 
   const [userMainData, setUserMainData] = useState({});
   const [isLoadingUser, setIsLoadingUser] = useState(true);
   const [isLoadingActivity, setIsLoadingActivity] = useState(true);
+  //const [isLoadingGoalData, setIsLoadingGoalData] = useState(true);
 
   const [userActivity, setUserActivity] = useState([]);
 
   useEffect(() => {
+
+    // Fetching user main data
     async function fetchData() {
       try {
         const response = await getUSerMainData(12);
@@ -38,6 +42,7 @@ function MainDataComponent() {
     }
     fetchData();
 
+    // Fetching user activity data
     const fetchActivityData = async () => {
       try {
           const response = await getUserActivity(12);
@@ -54,9 +59,11 @@ function MainDataComponent() {
     return <div className="loader">Loading...</div>;
   }
   const { firstName } = userMainData.userInfos;
+  const { todayScore } = userMainData;
   const {calorieCount, proteinCount, carbohydrateCount, lipidCount} = userMainData.keyData;
-
   const { sessions } = userActivity;
+
+  console.log(userMainData);
 
   
   return (

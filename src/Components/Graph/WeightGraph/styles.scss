@@ -6,6 +6,25 @@
     justify-content: space-around;
 }
 
+.recharts-surface{
+    height: 400px;
+}
+
+.weight-wrapper{
+    position: relative;
+}
+
+.weight-title{
+    position: absolute;
+    top : 30px;
+    left : 70px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+}
+
 .dot-red{
     display: inline-block;
     background-color: red;
@@ -34,4 +53,17 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 24px;
+}
+
+.custom-tooltip{
+    padding: 15px;
+    color : white;
+}
+
+.label{
+    text-align: center;
+}
+
+.label:first-of-type{
+    margin-bottom: 30px;
 }
