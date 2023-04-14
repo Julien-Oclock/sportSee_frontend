@@ -92,18 +92,6 @@ function MainDataComponent() {
       }
     };
     fetchUserPerformance();
-
-    // // Fetching goal data
-    // const fetchGoalData = async () => {
-    //   try {
-    //       const response = await getUserPerformance(12);
-    //       setGoalData(response);
-    //       setIsLoadingGoalData(false);
-    //   } catch (error) {
-    //       console.error(error);
-    //   }
-    // };
-    // fetchGoalData()
   },[]);
 
   if (isLoadingUser && isLoadingActivity && isLoadingPerformance) {
@@ -112,6 +100,9 @@ function MainDataComponent() {
   const { firstName } = userMainData.userInfos;
   const {calorieCount, proteinCount, carbohydrateCount, lipidCount} = userMainData.keyData;
   const { sessions } = userActivity;
+  const { todayScore } = userMainData
+
+  console.log(todayScore);
 
 
   const averageSessionsData = averageSessions;
@@ -129,9 +120,11 @@ function MainDataComponent() {
         <div className="dashboard">
           <div className="dashboard__graph">
             {!isLoadingActivity && <WeightGraph sessions={sessions[0]}/>}
-            {!isLoadingAverageSessions && <AverageSessionChart data={averageSessionsData}/>}
-            {!isLoadingPerformance && <PerformanceChart data={userPerformance}/>}
-            {/*  {!isLoadingGoalData && <GoalChart data={goalData}/>} */}
+            <div className="dashboard__inline-wrapper">
+              {!isLoadingAverageSessions && <AverageSessionChart data={averageSessionsData}/>}
+              {!isLoadingPerformance && <PerformanceChart data={userPerformance}/>}
+              <GoalChart data={todayScore}/>
+            </div>
           </div>
           <div className="dashboard__cards">
             <NutritionCard imgUrl={cal} value={calorieCount} unit="Kcal" type="Calories" />

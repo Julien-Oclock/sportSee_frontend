@@ -14,7 +14,7 @@
     &__title-item{
         font-size: 48px;
         font-weight: 500;
-        margin: 40px 0px;
+        margin: 20px 0px;
     }
 
     &__firstname{
@@ -30,6 +30,11 @@
 
     &__graph{
         width: 70%;  
+    }
+
+    &__inline-wrapper{
+        display: flex;
+        gap : 130px;
     }
 
     &__cards{

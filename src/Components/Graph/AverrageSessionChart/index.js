@@ -33,10 +33,9 @@ const AverageSessionsChart = ({ data }) => {
 
   return (
     <div className="averageSessionsChart">
-      <LineChart width={250} height={250} data={chartData}>
-        <XAxis dataKey="day" stroke="#ffffff" />
-        <YAxis stroke="#ffffff" />
-        <CartesianGrid stroke="#ffffff" strokeDasharray="3 3" />
+      <h2>Durée des sessions</h2>
+      <LineChart width={250} height={220} data={chartData}>
+        <XAxis axisLine={false} tickLine={false} dataKey="day" stroke="#ffffff" />
         <Tooltip content={<CustomTooltip />} />
         <Line type="monotone" dataKey="sessionLength" stroke="#FFFFFF" />
       </LineChart>

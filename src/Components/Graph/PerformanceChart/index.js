@@ -3,7 +3,6 @@ import {
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
-  PolarRadiusAxis,
   Radar,
 } from 'recharts'
 
@@ -39,7 +38,7 @@ function PerformanceChart({ data }) {
   ];
   return (
     <div className='wrapper-perfChart'>
-      <ResponsiveContainer width="90%" height="90%" className='radarChart' >
+      <ResponsiveContainer width="100%" height="100%" className='radarChart' >
       <RadarChart data={formatData}>
         <PolarGrid gridType="polygon" radialLines={false}  />
         <PolarAngleAxis radius='80%' fontSize={12} color={'#ffffff'} dataKey="subject" />
