@@ -1,14 +1,16 @@
 import api from './api';
 import userModel from '../Models/user.js';
-import activityModel from '../Models/activity.js';
-import performanceModel from '../Models/performance.js';
-import averageSessionModel from '../Models/averageSession.js';
+import  { UserActivitySession, ActivityMainData } from '../Models/activity.js';
+import UserPerformance from '../Models/performance.js';
+import {AverageSessionData, UserAverageSession} from '../Models/averageSession.js';
 
 const getUSerMainData = async (id) => {   
-    const response = await api.get(`/user/${id}`)
-        .then((res) => res.data )
-        .catch((err) => console.log(err));
-    const userData = response.data;
+    const response = await api.get(`/user/${id}`);
+    // console.log(response);
+    // if (!response.status === 200) {
+    //     throw new Error(`Unable to fetch average session for user ${id}`);
+    //   }
+    const userData = response.data.data;
     const MainData = new userModel(
         userData.id,
         userData.userInfos.firstName,
@@ -25,38 +27,58 @@ const getUSerMainData = async (id) => {
 
 const getUserActivity = async (id) => {
     const response = await api.get(`/user/${id}/activity`)
-        .then((res) => res.data)
-        .catch((err) => console.log(err));
-    const activityData = response.data;
-    const activity = new activityModel(
-        activityData.userId,
-        activityData.sessions
-    )
-    return activity;
+    // if (!response.status === 200) {
+    //     throw new Error(`Unable to fetch average session for user ${id}`);
+    //   }
+    const data = response.data.data;
+    const sessions = data.sessions.map(({ day, kilogram, calories }) => {
+        return new UserActivitySession(day, kilogram, calories);
+      });
+    
+      const activityMainData = new ActivityMainData(id, sessions);
+    
+      return activityMainData;
 }
 
 const getUserPerformance = async (id) => {
-    const response = await api.get(`/users/${id}/performance`)
-        .then((res) => res.data)
-        .catch((err) => console.log(err));
-    const performanceData = response.data;
-    const performance = new performanceModel(
-        performanceData.userId,
-        performanceData.sessions
-    )
-    return performance;
+   const response = await api.get(`/user/${id}/performance`);
+//    if (!response.ok) {
+//     throw new Error(`Unable to fetch user performance for user ${id}`);
+//   }
+  const performanceData = response.data.data;
+  const { kind, data } = performanceData;
+  const userPerformance = new UserPerformance(id, kind, data);
+  // Utilisation de la méthode getPerformanceValue pour récupérer les valeurs de performance
+  const cardioValue = userPerformance.getPerformanceValue(1);
+  const energyValue = userPerformance.getPerformanceValue(2);
+  const enduranceValue = userPerformance.getPerformanceValue(3);
+  const strengthValue = userPerformance.getPerformanceValue(4);
+  const speedValue = userPerformance.getPerformanceValue(5);
+  const intensityValue = userPerformance.getPerformanceValue(6);
+  const performanceValues = {
+    cardio: cardioValue,
+    energy: energyValue,
+    endurance: enduranceValue,
+    strength: strengthValue,
+    speed: speedValue,
+    intensity: intensityValue,
+  }
+  // Retourne un objet contenant les valeurs de performance pour chaque type
+  return userPerformance, performanceValues;
 }
 
 const getAverageSession = async (id) => {
-    const response = await api.get(`/users/${id}/average-sessions`)
-        .then((res) => res.json())
-        .catch((err) => console.log(err));
-    const averageSessionData = response.data;
-    const averageSession = new averageSessionModel(
-        averageSessionData.userId,
-        averageSessionData.sessions
-    )
-    return averageSession;
+    const response = await api.get(`/user/${id}/average-sessions`);
+    // if (!response.ok) {
+    //   throw new Error(`Unable to fetch average session for user ${id}`);
+    // }
+    const data = response.data.data;
+    console.log(data);
+    const sessions = data.sessions.map((session) => new UserAverageSession(session.day, session.sessionLength));
+    const averageSessionData = new AverageSessionData(id, sessions);
+    console.log(averageSessionData);
+    return averageSessionData;
+
 }
 
-export { getUSerMainData, getUserActivity, getUserPerformance, getAverageSession}
+export { getUSerMainData, getUserActivity, getUserPerformance, getAverageSession};
