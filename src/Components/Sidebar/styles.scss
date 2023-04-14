@@ -2,8 +2,10 @@
 
 .sidebar{
     background-color: $black;
-    height: 90vh;
     color : white;
+    position: absolute;
+    top : 10vh;
+    bottom: 0;
     width: 120px;
     position: absolute;
     display: flex;
@@ -11,8 +13,6 @@
     align-items: center;
     justify-content: center;
 
-    &__logo-container{
-    }
 
     &__logo-item{
         padding: 15px;
