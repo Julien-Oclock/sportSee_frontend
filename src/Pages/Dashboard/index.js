@@ -1,5 +1,8 @@
-import React, { useState, useEffect } from "react";
-import {getAverageSession, getUSerMainData, getUserActivity, getUserPerformance } from "../../Api/apiCalls";
+import React, { useContext, useState, useEffect } from 'react'
+//import apiCalls from "../../Api/apiCalls";
+
+// Context
+import { SourceContext }  from "../../Service/dataService.js";
 
 // stylesheet
 import './styles.scss'
@@ -23,6 +26,9 @@ import PerformanceChart from "../../Components/Graph/PerformanceChart";
 
 function MainDataComponent() {
 
+  const source  = useContext(SourceContext)
+  console.log(source.source.getUSerMainData(12));
+
   const [userMainData, setUserMainData] = useState({});
   const [isLoadingUser, setIsLoadingUser] = useState(true);
 
@@ -44,7 +50,8 @@ function MainDataComponent() {
     // Fetching user main data
     async function fetchData() {
       try {
-        const response = await getUSerMainData(12);
+        const response = await source.source.getUSerMainData(12);
+        console.log(response);
         setUserMainData(response);
         setIsLoadingUser(false);
       } catch (error) {
@@ -56,7 +63,7 @@ function MainDataComponent() {
     // Fetching user average sessions
     const fetchAverageSessions = async () => {
       try {
-          const response = await getAverageSession(12);
+          const response = await source.source.getAverageSession(12);
           setAverageSessions(response);
           setIsLoadingAverageSessions(false);
       } catch (error) {
@@ -68,7 +75,7 @@ function MainDataComponent() {
     // Fetching user activity data
     const fetchUserActivity = async () => {
       try {
-          const response = await getUserActivity(12);
+          const response = await source.source.getUserActivity(12);
           setUserActivity(response);
           setIsLoadingActivity(false);
       } catch (error) {
@@ -77,11 +84,10 @@ function MainDataComponent() {
     };
     fetchUserActivity();
 
-
     // Fetching user performance data
     const fetchUserPerformance = async () => {
       try {
-          const response = await getUserPerformance(12);
+          const response = await source.source.getUserPerformance(12);
           setUserPerformance(response);
           setIsLoadingPerformance(false);
       } catch (error) {
@@ -97,14 +103,9 @@ function MainDataComponent() {
   const { firstName } = userMainData.userInfos;
   const {calorieCount, proteinCount, carbohydrateCount, lipidCount} = userMainData.keyData;
   const { sessions } = userActivity;
-  const { todayScore } = userMainData
-
-  console.log(todayScore);
-
-
+  const { todayScore } = userMainData;
   const averageSessionsData = averageSessions;
 
-  
   return (
     <div className="page-content">
       <Navbar />

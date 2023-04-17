@@ -1,12 +1,12 @@
 import Dashboard from './Pages/Dashboard';
-// import SourceProvider from './Service/dataService.js'
+import SourceProvider from './Service/dataService.js'
 
 
 function App() {
   return (
-    //<SourceProvider>
+    <SourceProvider>
       <Dashboard />
-    //</SourceProvider>
+    </SourceProvider>
   );
 }
 

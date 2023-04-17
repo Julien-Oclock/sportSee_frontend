@@ -6,7 +6,6 @@ import './styles.scss'
 function GoalChart({ data }) {
   const progression = data;
   const remainsToBeDone = 1 - progression;
-  console.log(remainsToBeDone);
   const dataGoal = [
     { name: 'remainsToBeDone', value: remainsToBeDone },
     { name: 'progression', value: progression },

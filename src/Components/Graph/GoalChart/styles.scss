@@ -2,16 +2,9 @@
 
 .goalChart{
     position: relative;
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
     padding: 10px;
-
-
-    @media screen and (min-width: 1868px){
-        width: 295px;
-        height: 295px;
-      }
-
 
     @media screen and (max-width: 1268px){
         width: 220px;

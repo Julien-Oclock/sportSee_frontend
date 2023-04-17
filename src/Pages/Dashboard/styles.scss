@@ -21,6 +21,9 @@
         margin-top: 30px;
         display: flex;
         justify-content: space-around;
+        @media screen and (max-width: 1268px){
+            margin-top: 70px;
+        }
     }
 
     &__cards{
