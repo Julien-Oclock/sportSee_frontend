@@ -34,7 +34,8 @@
 
     &__inline-wrapper{
         display: flex;
-        gap : 130px;
+        justify-content: space-between;
+        padding: 0px 70px 0 50px;
     }
 
     &__cards{

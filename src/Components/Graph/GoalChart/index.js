@@ -28,16 +28,15 @@ function GoalChart({ data }) {
 
   return (
     <div className="goalChart chart-item">
-      <ResponsiveContainer width={270} height={270}>
+      <h2>Score</h2>
+      <ResponsiveContainer width="100%" height="100%">
         <PieChart height={400} width={400}>
           <Pie
-            height={230}
-            width={230}
             data={dataGoal}
             dataKey="value"
             nameKey="name"
-            innerRadius={60}
-            outerRadius={80}
+            innerRadius={100}
+            outerRadius={120}
             fill="#8884d8"
             labelLine={false}
           >

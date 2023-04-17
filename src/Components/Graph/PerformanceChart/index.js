@@ -12,37 +12,54 @@ function PerformanceChart({ data }) {
   
   const formatData = [
     {
-      subject: "cardio",
+      subject: "Intensité",
+      A: data.intensity,
+    },
+    {
+      subject: "Cardio",
       A: data.cardio,
     },
     {
-      subject: "energy",
+      subject: "Energie",
       A: data.energy,
     },
     {
-      subject: "endurance",
+      subject: "Endurance",
       A: data.endurance,
     },
     {
-      subject: "strength",
+      subject: "Force",
       A: data.strength,
     },
     {
-      subject: "speed",
+      subject: "Vitesse",
       A: data.speed,
     },
-    {
-      subject: "intensity",
-      A: data.intensity,
-    },
+
   ];
   return (
     <div className='wrapper-perfChart'>
-      <ResponsiveContainer width="100%" height="100%" className='radarChart' >
-      <RadarChart data={formatData}>
-        <PolarGrid gridType="polygon" radialLines={false}  />
-        <PolarAngleAxis radius='80%' fontSize={12} color={'#ffffff'} dataKey="subject" />
-        <Radar legendType='none' name="Performance" dataKey="A" stroke="#ffffff" fill="#FF0101" fillOpacity={0.7} />
+      <ResponsiveContainer className='radarChart' >
+      <RadarChart padding={{
+            top: 15,
+            right: 15,
+            bottom: 15,
+            left: 15,
+          }} data={formatData}>
+        <PolarGrid 
+          gridType="polygon" 
+          radialLines={false}  />
+        <PolarAngleAxis 
+          tick={{ fill: '#FFFFFF', fontSize: 12 }} 
+          radius='80%' fontSize={12} color={'#ffffff'} 
+          dataKey="subject" />
+        <Radar 
+          legendType='none' 
+          name="Performance" 
+          dataKey="A" 
+          stroke="#ffffff" 
+          fill="#FF0101" 
+          fillOpacity={0.7} />
       </RadarChart>
       </ResponsiveContainer>
     </div>
