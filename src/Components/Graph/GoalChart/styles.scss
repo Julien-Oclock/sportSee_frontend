@@ -6,12 +6,28 @@
     height: 300px;
     padding: 10px;
 
+    @media screen and (max-width: 1687px) {
+        width: 250px;
+        height: 250px;
+      }
+
+      @media screen and (max-width: 1268px){
+        width: 220px;
+        height: 220px;
+      }
+
+
     h2{
         position: relative;
         top : 10px;
         left : 20px;
         font-weight: 500;
         font-size: 15px;
+
+        @media screen and (max-width: 1268px){
+            top : 0;
+            left: 5;
+        }
     }
 
     &__legend{
@@ -23,9 +39,4 @@
         color : $black
     }
 
-}
-
-
-.wrapper-perfChart {
-    padding: 0!important;
 }

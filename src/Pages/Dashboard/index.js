@@ -38,9 +38,6 @@ function MainDataComponent() {
   const [userPerformance, setUserPerformance] = useState([]);
   const [isLoadingPerformance, setIsLoadingPerformance] = useState(true);
 
-  //goal data
-  const [goalData, setGoalData] = useState([]);
-  const [isLoadingGoalData, setIsLoadingGoalData] = useState(true);
 
   useEffect(() => {
 

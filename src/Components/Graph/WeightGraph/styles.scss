@@ -4,6 +4,10 @@
     display: flex;
     width: 350px;
     justify-content: space-around;
+
+    @media screen and (max-width: 1268px){
+        width: 280px;
+    }
 }
 
 
@@ -50,6 +54,7 @@
     font-weight: 500;
     font-size: 14px;
     line-height: 24px;
+
 }
 
 .custom-tooltip{

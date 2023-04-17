@@ -5,6 +5,19 @@
   height: 300px;
   padding: 10px;
   border-radius: 10px;
+  padding: 10px;
+
+  @media screen and (max-width: 1687px) {
+    width: 250px;
+    height: 250px;
+  }
+
+  @media screen and (max-width: 1268px){
+    width: 220px;
+    height: 220px;
+  }
+
+
 
 
   h2{

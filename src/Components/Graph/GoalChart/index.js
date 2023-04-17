@@ -30,13 +30,13 @@ function GoalChart({ data }) {
     <div className="goalChart chart-item">
       <h2>Score</h2>
       <ResponsiveContainer width="100%" height="100%">
-        <PieChart height={400} width={400}>
+        <PieChart>
           <Pie
             data={dataGoal}
             dataKey="value"
             nameKey="name"
-            innerRadius={100}
-            outerRadius={120}
+            innerRadius={90}
+            outerRadius={105}
             fill="#8884d8"
             labelLine={false}
           >

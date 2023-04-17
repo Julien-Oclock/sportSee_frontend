@@ -1,5 +1,5 @@
 import React from 'react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 import './styles.scss'
 
@@ -34,11 +34,13 @@ const AverageSessionsChart = ({ data }) => {
   return (
     <div className="averageSessionsChart">
       <h2>Durée des sessions</h2>
-      <LineChart width={250} height={220} data={chartData}>
-        <XAxis axisLine={false} tickLine={false} dataKey="day" stroke="#ffffff" />
-        <Tooltip content={<CustomTooltip />} />
-        <Line type="monotone" dataKey="sessionLength" stroke="#FFFFFF" />
-      </LineChart>
+      <ResponsiveContainer height='95%' width="100%">
+        <LineChart data={chartData}>
+          <XAxis axisLine={false} tickLine={false} dataKey="day" stroke="#ffffff" />
+          <Tooltip content={<CustomTooltip />} />
+          <Line type="monotone" dataKey="sessionLength" stroke="#FFFFFF" />
+        </LineChart>
+      </ResponsiveContainer>
     </div>
   );
 };
