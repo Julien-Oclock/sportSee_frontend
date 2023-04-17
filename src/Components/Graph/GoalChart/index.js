@@ -6,11 +6,13 @@ import './styles.scss'
 function GoalChart({ data }) {
   const progression = data;
   const remainsToBeDone = 1 - progression;
+  console.log(remainsToBeDone);
   const dataGoal = [
-    { name: 'progression', value: progression },
     { name: 'remainsToBeDone', value: remainsToBeDone },
+    { name: 'progression', value: progression },
+
   ];
-  const COLORS = ['#FF0000', '#ffffff'];
+  const COLORS = ['#ffffff','#FF0000'];
 
   const CustomizedLegend = () => {
     return (
@@ -30,13 +32,15 @@ function GoalChart({ data }) {
     <div className="goalChart chart-item">
       <h2>Score</h2>
       <ResponsiveContainer width="100%" height="100%">
-        <PieChart>
-          <Pie
+           
+        <PieChart
+          style={{ transform: 'rotate(-90deg)' }}>
+          <Pie className='goalChart__pie'
             data={dataGoal}
             dataKey="value"
             nameKey="name"
-            innerRadius={90}
-            outerRadius={105}
+            innerRadius={88}
+            outerRadius={100}
             fill="#8884d8"
             labelLine={false}
           >

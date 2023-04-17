@@ -3,10 +3,8 @@
 .sidebar{
     background-color: $black;
     color : white;
-    position: absolute;
-    top : 10vh;
-    bottom: 0;
     width: 120px;
+    min-height: 90vh;
     position: absolute;
     display: flex;
     flex-direction: column;

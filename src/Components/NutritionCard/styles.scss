@@ -15,6 +15,11 @@
         width: 64px;
         height: 64px;
         margin: 32px;
+        @media screen and (max-width: 1268px){
+            width: 54px;
+            height : 54px;
+            margin: 22px;
+        }
     }
 
     &__value{

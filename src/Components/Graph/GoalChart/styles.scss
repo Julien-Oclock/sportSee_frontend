@@ -2,19 +2,21 @@
 
 .goalChart{
     position: relative;
-    width: 300px;
-    height: 300px;
+    width: 250px;
+    height: 250px;
     padding: 10px;
 
-    @media screen and (max-width: 1687px) {
-        width: 250px;
-        height: 250px;
+
+    @media screen and (min-width: 1868px){
+        width: 295px;
+        height: 295px;
       }
 
-      @media screen and (max-width: 1268px){
+
+    @media screen and (max-width: 1268px){
         width: 220px;
         height: 220px;
-      }
+    }
 
 
     h2{
@@ -34,9 +36,13 @@
         font-size: 18px;
         text-align: center;
         color: #717171;
+
+        transform: rotate(90deg)
     }
     span {
         color : $black
     }
 
 }
+
+

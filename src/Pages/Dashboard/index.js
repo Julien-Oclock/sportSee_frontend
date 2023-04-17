@@ -112,7 +112,7 @@ function MainDataComponent() {
       <div className="main">
         <div className="main__title-wrapper">
           <h1 className="main__title-item"> Bonjour <span className="main__firstname">{firstName}</span></h1>
-          <aside className="main-title-aside"> Félicitation ! Vous avez explosé vos objectifs hier. &#128079; </aside>
+          <aside className="main__title-aside"> Félicitation ! Vous avez explosé vos objectifs hier. &#128079; </aside>
         </div>
         <div className="dashboard">
           <div className="dashboard__graph">
