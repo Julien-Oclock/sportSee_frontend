@@ -4,12 +4,16 @@ import  { UserActivitySession, ActivityMainData } from '../Models/activity.js';
 import UserPerformance from '../Models/performance.js';
 import {AverageSessionData, UserAverageSession} from '../Models/averageSession.js';
 
+
+/**
+Retrieves the main data of a user.
+* @async
+* @function
+* @param {string} id - The id of the user.
+* @returns {object} The main data of the user (firstname, age, daily score ...).
+*/
 const getUSerMainData = async (id) => {   
     const response = await api.get(`/user/${id}`);
-    // console.log(response);
-    // if (!response.status === 200) {
-    //     throw new Error(`Unable to fetch average session for user ${id}`);
-    //   }
     const userData = response.data.data;
     const MainData = new userModel(
         userData.id,
@@ -25,11 +29,16 @@ const getUSerMainData = async (id) => {
     return MainData;
 }
 
+
+/**
+Retrieves the activity dat of a user.
+* @async
+* @function
+* @param {string} id - The id of the user.
+* @returns {object} The activity data of the user.
+*/
 const getUserActivity = async (id) => {
-    const response = await api.get(`/user/${id}/activity`)
-    // if (!response.status === 200) {
-    //     throw new Error(`Unable to fetch average session for user ${id}`);
-    //   }
+    const response = await api.get(`/user/${id}/activity`);
     const data = response.data.data;
     const sessions = data.sessions.map(({ day, kilogram, calories }) => {
         return new UserActivitySession(day, kilogram, calories);
@@ -40,15 +49,18 @@ const getUserActivity = async (id) => {
       return activityMainData;
 }
 
+/**
+* Retrieves the performance data of a user.
+* @async
+* @function
+* @param {string} id - The id of the user.
+* @returns {Promise<{UserPerformance, Object}>} The performance data of the user and an object containing the values of performance for each type.
+*/
 const getUserPerformance = async (id) => {
-   const response = await api.get(`/user/${id}/performance`);
-//    if (!response.ok) {
-//     throw new Error(`Unable to fetch user performance for user ${id}`);
-//   }
+  const response = await api.get(`/user/${id}/performance`);
   const performanceData = response.data.data;
   const { kind, data } = performanceData;
   const userPerformance = new UserPerformance(id, kind, data);
-  // Utilisation de la méthode getPerformanceValue pour récupérer les valeurs de performance
   const cardioValue = userPerformance.getPerformanceValue(1);
   const energyValue = userPerformance.getPerformanceValue(2);
   const enduranceValue = userPerformance.getPerformanceValue(3);
@@ -67,18 +79,21 @@ const getUserPerformance = async (id) => {
   return userPerformance, performanceValues;
 }
 
+/**
+* Retrieves the average session data of a user.
+* @async
+* @function
+* @param {string} id - The id of the user.
+* @returns {object} The average session data of the user.
+*/
 const getAverageSession = async (id) => {
     const response = await api.get(`/user/${id}/average-sessions`);
-    // if (!response.ok) {
-    //   throw new Error(`Unable to fetch average session for user ${id}`);
-    // }
     const data = response.data.data;
     console.log(data);
     const sessions = data.sessions.map((session) => new UserAverageSession(session.day, session.sessionLength));
     const averageSessionData = new AverageSessionData(id, sessions);
     console.log(averageSessionData);
     return averageSessionData;
-
 }
 
 export { getUSerMainData, getUserActivity, getUserPerformance, getAverageSession};
