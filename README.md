@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+# Sportsee
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Sportsee est une application qui permet à chaque utilisateur d'atteindre ses objectifs en surveillant ses progrès.
 
-## Available Scripts
+#### Prérequis : 
+ - **NodeJs** (version 16.13)
+ - **NPM**
+ - **Git**
+ - **Éditeur de code** (Vscode)
 
-In the project directory, you can run:
+ ## Installation
 
-### `npm start`
+ ### Installation et lancement du Backend
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Pour utiliser le backend du projet, vous devez cloner l'API depuis OpenClassrooms-Student-Center.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+[Repo Github du backend]( https://github.com/Julien-Oclock/P9-front-end-dashboard)
 
-### `npm test`
+Copiez le lien https ou ssh présent sur le repo afin de récupérer le projet
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Ouvrez un terminal et suivez les instructions ci-dessous.
 
-### `npm run build`
+```bash
+git clone <lien-ssh-du-repo>
+cd P9-front-end-dashboard
+npm install
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Ensuite, lancez l'API
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+npm start
+```
+Vous devriez voir apparaitre les message suivant, cela signifie que votre backend est bien lancer sur le port 3000
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+> P9-front-end-dashboard@1.0.0 start
+> node app/index.js
 
-### `npm run eject`
+Magic happens on port 3000
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Installation et lancement du Frontend
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Pour utiliser le frontend du projet, rendez-vous sur le lien suivant et cloner le repo dans un nouveau terminal.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+git clone <lien-ssh-du-repo>
+cd sportSee_frontend
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Ensuite, lancez l'API
+```bash
+npm start
+```
 
-## Learn More
+Par default, React lance l'application sur le port 3000. COmme le backend du projet tourne déjà sur ce port vous devriez voi apparaitre le message suivant
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+? Something is already running on port 3000.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Would you like to run the app on another port instead? » (Y/n)
+```
 
-### Code Splitting
+Cliquez sur Y ou pressez la touche 'Y' de votre clavier pour oui et c'est tout ! Vous devriez voir le message suivant
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+You can now view sportSee_frontend in the browser.
 
-### Analyzing the Bundle Size
+Local:            http://localhost:3001
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Changer les données
+Pour passer des données à Mock ou à API, vous pouvez dans /src/Service/dataService.js modifier et sélectionner source.api ou source.mock.
+ ```react
+<SourceContext.Provider value={{ source: source.api }}>
+ ```
 
-### Making a Progressive Web App
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Changer d'utilisateur
+Si vous voulez changer d'utilisateur, dans l'URL de votre navigateur, vous pouvez choisir l'identifiant utilisateur.
+Seuls les identifiants 12 et 18 fonctionnent.
 
-### Advanced Configuration
+Par exemple, si vous voulez visualiser les données de l'utilisateur dont l'ID est 12, allez sur :
+http://localhost:3001/user/12
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
