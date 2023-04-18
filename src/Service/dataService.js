@@ -7,7 +7,7 @@ const service = {
     mock: MockCall,
 }
 
-export const SourceContext = createContext(service);
+export const SourceContext = createContext(service.api);
 
 
 /**

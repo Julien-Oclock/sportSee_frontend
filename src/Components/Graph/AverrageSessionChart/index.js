@@ -28,6 +28,7 @@ const CustomTooltip = ({ active, payload }) => {
  * @returns {JSX} - the JSX of the AverageSessionsChart component
  */
 const AverageSessionsChart = ({ data }) => {
+  console.log(data.sessions);
   const daysOfWeek = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
   /**
@@ -38,7 +39,7 @@ const AverageSessionsChart = ({ data }) => {
     if (data && data.sessions && data.sessions.length > 0) {
       const formattedData = [];
       for (let i = 0; i < daysOfWeek.length; i++) {
-        const sessionForDay = data.sessions[0].find(session => session.day === i + 1);
+        const sessionForDay = data.sessions.find(session => session.day === i + 1);
           formattedData.push({ day: daysOfWeek[i], sessionLength: sessionForDay.sessionLength });
       }
       return formattedData;

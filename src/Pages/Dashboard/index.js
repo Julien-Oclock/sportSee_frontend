@@ -124,10 +124,11 @@ function MainDataComponent() {
     return <div className="loader">Loading...</div>;
   }
   const { firstName } = userMainData.userInfos;
-  const {calorieCount, proteinCount, carbohydrateCount, lipidCount} = userMainData.keyData;
+  const { calorieCount, proteinCount, carbohydrateCount, lipidCount } = userMainData.keyData;
   const { sessions } = userActivity;
   const { todayScore } = userMainData;
   const averageSessionsData = averageSessions;
+  console.log(averageSessionsData);
 
   return (
     <div className="page-content">
@@ -140,7 +141,7 @@ function MainDataComponent() {
         </div>
         <div className="dashboard">
           <div className="dashboard__graph">
-            {!isLoadingActivity && <WeightGraph sessions={sessions[0]}/>}
+            {!isLoadingActivity && <WeightGraph sessions={sessions}/>}
             <div className="dashboard__inline-wrapper">
               {!isLoadingAverageSessions && <AverageSessionChart data={averageSessionsData}/>}
               {!isLoadingPerformance && <PerformanceChart data={userPerformance}/>}

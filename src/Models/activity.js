@@ -27,7 +27,7 @@ class ActivityMainData {
        * @property {Array} sessions - The sessions of the user.
        */ 
       this.userId = userId;
-      this.sessions = [sessions];         
+      this.sessions = [...sessions];         
     }
 
     addSession(day, kilogram, calories) {

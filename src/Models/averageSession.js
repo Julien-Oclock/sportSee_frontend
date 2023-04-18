@@ -28,7 +28,7 @@ class AverageSessionData {
      * @property {Array} sessions - The length of the user's session.
      */
     this.userId = userId;
-    this.sessions = [sessions];
+    this.sessions = [...sessions];
   }
 
   /**

@@ -15,7 +15,7 @@ import './styles.scss'
  * @returns {JSX} - the JSX of the RadarChart component
  */
 function PerformanceChart({ data }) {
-  
+  console.log(data);
   const formatData = [
     {
       subject: "Intensité",

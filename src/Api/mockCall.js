@@ -47,7 +47,24 @@ const mockCall = {
       const userPerformance = mock.USER_PERFORMANCE.find(
         (res) => res.userId === parseInt(userId)
       )
-      return userPerformance
+      console.log(userPerformance);
+
+      const cardioValue = userPerformance.data[0].value;
+      const energyValue = userPerformance.data[1].value;
+      const enduranceValue = userPerformance.data[2].value;
+      const strengthValue = userPerformance.data[3].value;
+      const speedValue = userPerformance.data[4].value;
+      const intensityValue = userPerformance.data[5].value;
+
+      const performanceValues = {
+        cardio: cardioValue,
+        energy: energyValue,
+        endurance: enduranceValue,
+        strength: strengthValue,
+        speed: speedValue,
+        intensity: intensityValue,
+      }
+      return performanceValues
     }
 }
 

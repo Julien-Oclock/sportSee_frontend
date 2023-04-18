@@ -9,6 +9,7 @@ import './styles.scss'
  * @returns 
  */
 function GoalChart({ data }) {
+  console.log(data);
   const progression = data;
   const remainsToBeDone = 1 - progression;
   const dataGoal = [
