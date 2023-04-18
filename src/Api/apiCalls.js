@@ -1,5 +1,5 @@
 import userModel from '../Models/user.js';
-import  { UserActivitySession, ActivityMainData } from '../Models/activity.js';
+import { UserActivitySession, ActivityMainData } from '../Models/activity.js';
 import UserPerformance from '../Models/performance.js';
 import {AverageSessionData, UserAverageSession} from '../Models/averageSession.js';
 import api from './Api.js';
@@ -8,7 +8,7 @@ const apiCalls = {
 
 
 /**
-Retrieves the main data of a user.
+* Retrieves the main data of a user.
 * @async
 * @function
 * @param {string} id - The id of the user.
@@ -33,7 +33,7 @@ Retrieves the main data of a user.
 
 
   /**
-  Retrieves the activity dat of a user.
+  * Retrieves the activity dat of a user.
   * @async
   * @function
   * @param {string} id - The id of the user.

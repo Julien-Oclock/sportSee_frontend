@@ -3,7 +3,14 @@ import PropTypes from 'prop-types';
 
 import './styles.scss';
 
-
+/**
+ * 
+ * @param {imgUrl} imgUrl - the url of the image representing the type of the nutrition
+ * @param {value} value - the value of the nutrition
+ * @param {type} type - the type of the nutrition (ex: calories, protein, glucides )
+ * @param {unit} unit - the unit of the nutrition (ex: Kcal, g) 
+ * @returns {JSX} - the JSX of the NutritionCard component
+ */
 const NutritionCard = ({imgUrl, value, type, unit} ) => {
 
     return (

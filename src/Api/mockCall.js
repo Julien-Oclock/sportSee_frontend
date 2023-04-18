@@ -2,7 +2,8 @@ import mock from '../Data/data.js'
 
 
 const mockCall = {
-    /**
+  /**
+   * get user main data
    * @param {string} userId
    * @returns {object} user data
    */
@@ -14,6 +15,7 @@ const mockCall = {
     },
   
     /**
+     * get user activity data
      * @param {string} userId
      * @returns {object} user activity
      */
@@ -25,6 +27,7 @@ const mockCall = {
     },
   
     /**
+     * get user average sessions data
      * @param {string} userId
      * @returns {object} user average sessions
      */
@@ -36,6 +39,7 @@ const mockCall = {
     },
   
     /**
+     * Get user performance data
      * @param {string} userId
      * @returns {object} user performance
      */

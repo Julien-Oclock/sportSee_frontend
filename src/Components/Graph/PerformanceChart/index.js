@@ -8,6 +8,12 @@ import {
 
 import './styles.scss'
 
+
+/**
+ * Component used to display the radar chart of the performance data
+ * @param {data} data - the data of the chart (performance data for one user : cardio, strength, speed, endurance, energy, intensity) 
+ * @returns {JSX} - the JSX of the RadarChart component
+ */
 function PerformanceChart({ data }) {
   
   const formatData = [

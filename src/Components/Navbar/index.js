@@ -4,6 +4,10 @@ import logo from '../../assets/images/logo.png';
 
 import './styles.scss';
 
+/**
+ * Component used to display the navbar
+ * @returns {JSX} - the JSX of the Navbar component
+ */
 const Navbar = () => {
 
     const label = ['Acceuil', 'Profil', 'Réglage', 'Communauté'];

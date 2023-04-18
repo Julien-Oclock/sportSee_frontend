@@ -24,10 +24,14 @@ import GoalChart from "../../Components/Graph/GoalChart";
 import AverageSessionChart from "../../Components/Graph/AverrageSessionChart";
 import PerformanceChart from "../../Components/Graph/PerformanceChart";
 
+
+/**
+ * Component for the dashboard page.
+ * @returns {JSX} The dashboard page.
+ */
 function MainDataComponent() {
 
   const source  = useContext(SourceContext)
-  console.log(source.source.getUSerMainData(12));
 
   const [userMainData, setUserMainData] = useState({});
   const [isLoadingUser, setIsLoadingUser] = useState(true);
@@ -47,11 +51,15 @@ function MainDataComponent() {
 
   useEffect(() => {
 
-    // Fetching user main data
+    /**
+     * Fetching user main data
+     * @async
+     * @function fetchData
+     * @returns {Promise} The formated response from the API.
+     */
     async function fetchData() {
       try {
         const response = await source.source.getUSerMainData(12);
-        console.log(response);
         setUserMainData(response);
         setIsLoadingUser(false);
       } catch (error) {
@@ -60,7 +68,12 @@ function MainDataComponent() {
     }
     fetchData();
 
-    // Fetching user average sessions
+    /**
+     * Fetching average sessions data
+     * @async
+     * @function fetchAverageSessions
+     * @returns {Promise} The formated response from the API.
+     */
     const fetchAverageSessions = async () => {
       try {
           const response = await source.source.getAverageSession(12);
@@ -72,7 +85,12 @@ function MainDataComponent() {
     };
     fetchAverageSessions();
 
-    // Fetching user activity data
+    /**
+     * Fetching user activity data
+     * @async
+     * @function fetchUserActivity
+     * @returns {Promise} The formated response from the API.
+     */
     const fetchUserActivity = async () => {
       try {
           const response = await source.source.getUserActivity(12);
@@ -84,7 +102,12 @@ function MainDataComponent() {
     };
     fetchUserActivity();
 
-    // Fetching user performance data
+    /**
+     * Fetching user performance data
+     * @async
+     * @function fetchUserPerformance
+     * @returns {Promise} The formated response from the API.
+     */
     const fetchUserPerformance = async () => {
       try {
           const response = await source.source.getUserPerformance(12);
@@ -95,7 +118,7 @@ function MainDataComponent() {
       }
     };
     fetchUserPerformance();
-  },[]);
+  },[source.source]);
 
   if (isLoadingUser && isLoadingActivity && isLoadingPerformance) {
     return <div className="loader">Loading...</div>;

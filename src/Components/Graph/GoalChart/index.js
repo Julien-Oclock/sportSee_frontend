@@ -3,6 +3,11 @@ import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts'
 import './styles.scss'
 
 
+/**
+ * Component used to display the pie chart of the goal progression
+ * @param {data} data - the data of the chart (daily goal progression for one user) 
+ * @returns 
+ */
 function GoalChart({ data }) {
   const progression = data;
   const remainsToBeDone = 1 - progression;
@@ -13,6 +18,10 @@ function GoalChart({ data }) {
   ];
   const COLORS = ['#ffffff','#FF0000'];
 
+  /**
+   * component used to display the legend of the pie chart
+   * @returns {JSX} - the JSX of the CustomizedLegend component
+   */
   const CustomizedLegend = () => {
     return (
       <div className="goalChart__legend">

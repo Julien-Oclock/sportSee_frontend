@@ -12,6 +12,13 @@ import {
 
 import './styles.scss'
 
+
+/**
+ * This component is used to display a custom tooltip for the WeightGraph component
+ * @param {boolean} active - true if the tooltip is active
+ * @param {object} payload - the data of the tooltip
+ * @returns {JSX} - the JSX of the CustomTooltip component
+ */
 const CustomTooltip = ({ active, payload }) => {
     if (active && payload && payload.length) {
       return (
@@ -25,6 +32,11 @@ const CustomTooltip = ({ active, payload }) => {
     return null;
   };
 
+/**
+ * Component used to display the bar chart of the weight/spending calories for one week
+ * @param {session} sessions - the data of the chart 
+ * @returns {JSX} - the JSX of the WeightGraph component
+ */
 const WeightGraph = ({ sessions }) => {    
     return (
     <div className="weight-wrapper">

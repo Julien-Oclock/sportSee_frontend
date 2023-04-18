@@ -10,7 +10,11 @@ const service = {
 export const SourceContext = createContext(service);
 
 
-
+/**
+ * Component used to provide the service to the children
+ * @param {children} children - the children of the main component 
+ * @returns {JSX} - the JSX of the ServiceProvider component
+ */
 const ServiceProvider = ({ children }) => {
     return (
         <SourceContext.Provider value={{source : service.api}}>

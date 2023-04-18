@@ -3,7 +3,15 @@ import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 import './styles.scss'
 
+
+/**
+* This component is used to display a custom tooltip for the AverageSessionsChart component
+* @param {boolean} active - true if the tooltip is active
+* @param {object} payload - the data of the tooltip
+* @returns {JSX} - the JSX of the CustomTooltip component
+*/
 const CustomTooltip = ({ active, payload }) => {
+  console.log(active);
   if (active && payload && payload.length) {
     return (
       <div className="averageSessionsChart__customTooltip">
@@ -14,9 +22,18 @@ const CustomTooltip = ({ active, payload }) => {
   return null
 }
 
+/**
+ * Component used to display the line chart of the average sessions
+ * @param {data} data - the data of the chart 
+ * @returns {JSX} - the JSX of the AverageSessionsChart component
+ */
 const AverageSessionsChart = ({ data }) => {
   const daysOfWeek = ['L', 'M', 'M', 'J', 'V', 'S', 'D'];
 
+  /**
+   * Function used to format the data of the chart
+   * @returns {array} - the formatted data of the chart
+   */
   const formatData = () => {
     if (data && data.sessions && data.sessions.length > 0) {
       const formattedData = [];
