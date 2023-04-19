@@ -6,6 +6,8 @@ import {
   Radar,
 } from 'recharts'
 
+import PropTypes from 'prop-types';
+
 import './styles.scss'
 
 
@@ -74,3 +76,25 @@ function PerformanceChart({ data }) {
 
 
 export default PerformanceChart
+
+PerformanceChart.propTypes = {
+  data: PropTypes.shape({
+    intensity: PropTypes.number.isRequired,
+    cardio: PropTypes.number.isRequired,
+    energy: PropTypes.number.isRequired,
+    endurance: PropTypes.number.isRequired,
+    strength: PropTypes.number.isRequired,
+    speed: PropTypes.number.isRequired,
+  }).isRequired
+}
+
+PerformanceChart.defaultProps = {
+  data: {
+    intensity: 0,
+    cardio: 0,
+    energy: 0,
+    endurance: 0,
+    strength: 0,
+    speed: 0,
+  }
+}

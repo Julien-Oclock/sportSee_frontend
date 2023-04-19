@@ -1,5 +1,5 @@
 import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts'
-
+import PropTypes from 'prop-types';
 import './styles.scss'
 
 
@@ -70,3 +70,11 @@ function GoalChart({ data }) {
 }
 
 export default GoalChart;
+
+GoalChart.propTypes = {
+  data: PropTypes.number.isRequired,
+}
+
+GoalChart.defaultProps = {
+  data: 0,
+}

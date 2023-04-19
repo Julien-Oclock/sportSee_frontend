@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from 'recharts';
 
 import './styles.scss'
@@ -64,3 +65,18 @@ const AverageSessionsChart = ({ data }) => {
 };
 
 export default AverageSessionsChart;
+
+AverageSessionsChart.propTypes = {
+  data : PropTypes.shape({
+    sessions: PropTypes.arrayOf(PropTypes.shape({
+      day: PropTypes.number.isRequired,
+      sessionLength: PropTypes.number.isRequired
+    })).isRequired
+  }).isRequired
+}
+
+AverageSessionsChart.defaultProps = {
+  data: {
+    sessions: []
+  }
+}

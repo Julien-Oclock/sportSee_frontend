@@ -9,6 +9,7 @@ import {
   CartesianGrid,
   Legend
 } from "recharts";
+import PropTypes from 'prop-types';
 
 import './styles.scss'
 
@@ -135,3 +136,20 @@ const WeightGraph = ({ sessions }) => {
 
 export default WeightGraph;
 
+WeightGraph.propTypes = {
+  sessions: PropTypes.arrayOf(
+    PropTypes.shape({
+      day: PropTypes.string.isRequired,
+      kilogram: PropTypes.number.isRequired,
+      calories: PropTypes.number.isRequired,
+    }),
+  )
+}
+
+WeightGraph.defaultProps = {
+  sessions: [{
+    day: '',
+    kilogram: 0,
+    calories: 0,
+  }],
+}

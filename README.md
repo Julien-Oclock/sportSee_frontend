@@ -72,7 +72,7 @@ Local:            http://localhost:3001
 ```
 
 ### Changer les données
-Pour passer des données à Mock ou à API, vous pouvez dans /src/Service/dataService.js modifier et sélectionner source.api ou source.mock.
+Pour passer des données à Mock ou à API, vous pouvez dans /src/Service/dataService.js modifier et sélectionner source.api ou source.mock
  ```react
 <SourceContext.Provider value={{ source: source.api }}>
  ```
