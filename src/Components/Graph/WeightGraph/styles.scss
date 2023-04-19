@@ -1,71 +1,69 @@
-@import '../../../assets/sass/config.scss';
+@import "../../../assets/sass/config.scss";
 
 .legend {
-    display: flex;
-    width: 350px;
-    justify-content: space-around;
+  display: flex;
+  width: 350px;
+  justify-content: space-around;
 
-    @media screen and (max-width: 1268px){
-        width: 280px;
-    }
+  @media screen and (max-width: 1268px) {
+    width: 280px;
+  }
 }
 
-
-.weight-wrapper{
-    position: relative;
+.weight-wrapper {
+  position: relative;
 }
 
-.weight-title{
-    position: absolute;
-    top : 30px;
-    left : 70px;
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 18px;
-    line-height: 24px;
+.weight-title {
+  position: absolute;
+  top: 30px;
+  left: 70px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
 }
 
-.dot-red{
-    display: inline-block;
-    background-color: red;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin-right: 10px;
+.dot-red {
+  display: inline-block;
+  background-color: red;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-.dot-black{
-    display: inline-block;
-    background-color: black;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    margin-right: 10px;
+.dot-black {
+  display: inline-block;
+  background-color: black;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 10px;
 }
 
-.weight-graph{
-    background-color: $light-grey;
+.weight-graph {
+  background-color: $light-grey;
 }
 
-.legend-item{
-    color : rgba(116, 121, 140, 1);
-    font-style: normal;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 24px;
-
+.legend-item {
+  color: rgba(116, 121, 140, 1);
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 24px;
 }
 
-.custom-tooltip{
-    padding: 15px;
-    color : white;
+.custom-tooltip {
+  padding: 15px;
+  color: white;
 }
 
-.label{
-    text-align: center;
+.label {
+  text-align: center;
 }
 
-.label:first-of-type{
-    margin-bottom: 30px;
+.label:first-of-type {
+  margin-bottom: 30px;
 }

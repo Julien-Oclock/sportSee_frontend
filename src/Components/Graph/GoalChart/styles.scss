@@ -1,41 +1,37 @@
-@import '../../../assets/sass/config.scss';
+@import "../../../assets/sass/config.scss";
 
-.goalChart{
+.goalChart {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  padding: 10px;
+
+  @media screen and (max-width: 1268px) {
+    width: 220px;
+    height: 220px;
+  }
+
+  h2 {
     position: relative;
-    width: 300px;
-    height: 300px;
-    padding: 10px;
+    top: 10px;
+    left: 20px;
+    font-weight: 500;
+    font-size: 15px;
 
-    @media screen and (max-width: 1268px){
-        width: 220px;
-        height: 220px;
+    @media screen and (max-width: 1268px) {
+      top: 0;
+      left: 5;
     }
+  }
 
+  &__legend {
+    font-size: 18px;
+    text-align: center;
+    color: #717171;
 
-    h2{
-        position: relative;
-        top : 10px;
-        left : 20px;
-        font-weight: 500;
-        font-size: 15px;
-
-        @media screen and (max-width: 1268px){
-            top : 0;
-            left: 5;
-        }
-    }
-
-    &__legend{
-        font-size: 18px;
-        text-align: center;
-        color: #717171;
-
-        transform: rotate(90deg)
-    }
-    span {
-        color : $black
-    }
-
+    transform: rotate(90deg);
+  }
+  span {
+    color: $black;
+  }
 }
-
-

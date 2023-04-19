@@ -1,11 +1,11 @@
-import React, { useContext, useState, useEffect } from 'react'
+import React, { useContext, useState, useEffect } from "react";
 //import apiCalls from "../../Api/apiCalls";
 
 // Context
-import { SourceContext }  from "../../Service/dataService.js";
+import { SourceContext } from "../../Service/dataService.js";
 
 // stylesheet
-import './styles.scss'
+import "./styles.scss";
 
 // Images
 import cal from "../../assets/images/calories-icon.png";
@@ -24,14 +24,12 @@ import GoalChart from "../../Components/Graph/GoalChart";
 import AverageSessionChart from "../../Components/Graph/AverrageSessionChart";
 import PerformanceChart from "../../Components/Graph/PerformanceChart";
 
-
 /**
  * Component for the dashboard page.
  * @returns {JSX} The dashboard page.
  */
 function MainDataComponent() {
-
-  const source  = useContext(SourceContext)
+  const source = useContext(SourceContext);
 
   const [userMainData, setUserMainData] = useState({});
   const [isLoadingUser, setIsLoadingUser] = useState(true);
@@ -42,15 +40,14 @@ function MainDataComponent() {
 
   //  daily sessions (average)
   const [averageSessions, setAverageSessions] = useState([]);
-  const [isLoadingAverageSessions, setIsLoadingAverageSessions] = useState(true);
+  const [isLoadingAverageSessions, setIsLoadingAverageSessions] =
+    useState(true);
 
   // user performance(average, best, worst)
   const [userPerformance, setUserPerformance] = useState([]);
   const [isLoadingPerformance, setIsLoadingPerformance] = useState(true);
 
-
   useEffect(() => {
-
     /**
      * Fetching user main data
      * @async
@@ -76,11 +73,11 @@ function MainDataComponent() {
      */
     const fetchAverageSessions = async () => {
       try {
-          const response = await source.source.getAverageSession(12);
-          setAverageSessions(response);
-          setIsLoadingAverageSessions(false);
+        const response = await source.source.getAverageSession(12);
+        setAverageSessions(response);
+        setIsLoadingAverageSessions(false);
       } catch (error) {
-          console.error(error);
+        console.error(error);
       }
     };
     fetchAverageSessions();
@@ -93,11 +90,11 @@ function MainDataComponent() {
      */
     const fetchUserActivity = async () => {
       try {
-          const response = await source.source.getUserActivity(12);
-          setUserActivity(response);
-          setIsLoadingActivity(false);
+        const response = await source.source.getUserActivity(12);
+        setUserActivity(response);
+        setIsLoadingActivity(false);
       } catch (error) {
-          console.error(error);
+        console.error(error);
       }
     };
     fetchUserActivity();
@@ -110,21 +107,22 @@ function MainDataComponent() {
      */
     const fetchUserPerformance = async () => {
       try {
-          const response = await source.source.getUserPerformance(12);
-          setUserPerformance(response);
-          setIsLoadingPerformance(false);
+        const response = await source.source.getUserPerformance(12);
+        setUserPerformance(response);
+        setIsLoadingPerformance(false);
       } catch (error) {
-          console.error(error);
+        console.error(error);
       }
     };
     fetchUserPerformance();
-  },[source.source]);
+  }, [source.source]);
 
   if (isLoadingUser && isLoadingActivity && isLoadingPerformance) {
     return <div className="loader">Loading...</div>;
   }
   const { firstName } = userMainData.userInfos;
-  const { calorieCount, proteinCount, carbohydrateCount, lipidCount } = userMainData.keyData;
+  const { calorieCount, proteinCount, carbohydrateCount, lipidCount } =
+    userMainData.keyData;
   const { sessions } = userActivity;
   const { todayScore } = userMainData;
   const averageSessionsData = averageSessions;
@@ -136,28 +134,58 @@ function MainDataComponent() {
       <Sidebar />
       <div className="main">
         <div className="main__title-wrapper">
-          <h1 className="main__title-item"> Bonjour <span className="main__firstname">{firstName}</span></h1>
-          <aside className="main__title-aside"> Félicitation ! Vous avez explosé vos objectifs hier. &#128079; </aside>
+          <h1 className="main__title-item">
+            {" "}
+            Bonjour <span className="main__firstname">{firstName}</span>
+          </h1>
+          <aside className="main__title-aside">
+            {" "}
+            Félicitation ! Vous avez explosé vos objectifs hier. &#128079;{" "}
+          </aside>
         </div>
         <div className="dashboard">
           <div className="dashboard__graph">
-            {!isLoadingActivity && <WeightGraph sessions={sessions}/>}
+            {!isLoadingActivity && <WeightGraph sessions={sessions} />}
             <div className="dashboard__inline-wrapper">
-              {!isLoadingAverageSessions && <AverageSessionChart data={averageSessionsData}/>}
-              {!isLoadingPerformance && <PerformanceChart data={userPerformance}/>}
-              <GoalChart data={todayScore}/>
+              {!isLoadingAverageSessions && (
+                <AverageSessionChart data={averageSessionsData} />
+              )}
+              {!isLoadingPerformance && (
+                <PerformanceChart data={userPerformance} />
+              )}
+              <GoalChart data={todayScore} />
             </div>
           </div>
           <div className="dashboard__cards">
-            <NutritionCard imgUrl={cal} value={calorieCount} unit="Kcal" type="Calories" />
-            <NutritionCard imgUrl={prot} value={proteinCount} unit="g" type="Proteines" />
-            <NutritionCard imgUrl={carb} value={carbohydrateCount} unit="g" type="Glucides" />
-            <NutritionCard imgUrl={fat} value={lipidCount} unit="g" type="Lipides" />
+            <NutritionCard
+              imgUrl={cal}
+              value={calorieCount}
+              unit="Kcal"
+              type="Calories"
+            />
+            <NutritionCard
+              imgUrl={prot}
+              value={proteinCount}
+              unit="g"
+              type="Proteines"
+            />
+            <NutritionCard
+              imgUrl={carb}
+              value={carbohydrateCount}
+              unit="g"
+              type="Glucides"
+            />
+            <NutritionCard
+              imgUrl={fat}
+              value={lipidCount}
+              unit="g"
+              type="Lipides"
+            />
           </div>
-        </div>    
-      </div>      
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
 export default MainDataComponent;

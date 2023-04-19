@@ -2,19 +2,20 @@
 
 Sportsee est une application qui permet à chaque utilisateur d'atteindre ses objectifs en surveillant ses progrès.
 
-#### Prérequis : 
- - **NodeJs** (version 16.13)
- - **NPM**
- - **Git**
- - **Éditeur de code** (Vscode)
+#### Prérequis :
 
- ## Installation
+- **NodeJs** (version 16.13)
+- **NPM**
+- **Git**
+- **Éditeur de code** (Vscode)
 
- ### Installation et lancement du Backend
+## Installation
+
+### Installation et lancement du Backend
 
 Pour utiliser le backend du projet, vous devez cloner l'API depuis OpenClassrooms-Student-Center.
 
-[Repo Github du backend]( https://github.com/Julien-Oclock/P9-front-end-dashboard)
+[Repo Github du backend](https://github.com/Julien-Oclock/P9-front-end-dashboard)
 
 Copiez le lien https ou ssh présent sur le repo afin de récupérer le projet
 
@@ -31,6 +32,7 @@ Ensuite, lancez l'API
 ```bash
 npm start
 ```
+
 Vous devriez voir apparaitre les message suivant, cela signifie que votre backend est bien lancer sur le port 3000
 
 ```bash
@@ -51,6 +53,7 @@ npm install
 ```
 
 Ensuite, lancez l'API
+
 ```bash
 npm start
 ```
@@ -72,18 +75,17 @@ Local:            http://localhost:3001
 ```
 
 ### Changer les données
-Pour passer des données à Mock ou à API, vous pouvez dans /src/Service/dataService.js modifier et sélectionner source.api ou source.mock
- ```react
-<SourceContext.Provider value={{ source: source.api }}>
- ```
 
+Pour passer des données à Mock ou à API, vous pouvez dans /src/Service/dataService.js modifier et sélectionner source.api ou source.mock
+
+```react
+<SourceContext.Provider value={{ source: source.api }}>
+```
 
 ### Changer d'utilisateur
+
 Si vous voulez changer d'utilisateur, dans l'URL de votre navigateur, vous pouvez choisir l'identifiant utilisateur.
 Seuls les identifiants 12 et 18 fonctionnent.
 
 Par exemple, si vous voulez visualiser les données de l'utilisateur dont l'ID est 12, allez sur :
 http://localhost:3001/user/12
-
-
-

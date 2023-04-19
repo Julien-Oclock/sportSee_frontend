@@ -1,6 +1,5 @@
-import Dashboard from './Pages/Dashboard';
-import SourceProvider from './Service/dataService.js'
-
+import Dashboard from "./Pages/Dashboard";
+import SourceProvider from "./Service/dataService.js";
 
 function App() {
   return (

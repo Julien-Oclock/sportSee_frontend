@@ -7,12 +7,11 @@ import {
   Tooltip,
   ResponsiveContainer,
   CartesianGrid,
-  Legend
+  Legend,
 } from "recharts";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import './styles.scss'
-
+import "./styles.scss";
 
 /**
  * This component is used to display a custom tooltip for the WeightGraph component
@@ -21,25 +20,25 @@ import './styles.scss'
  * @returns {JSX} - the JSX of the CustomTooltip component
  */
 const CustomTooltip = ({ active, payload }) => {
-    if (active && payload && payload.length) {
-      return (
-        <div className="custom-tooltip">
-          <p className="label">{` ${payload[0].value}Kg`}</p>
-          <p className="label">{` ${payload[1].value}Kcal`}</p>
-        </div>
-      );
-    }
-  
-    return null;
-  };
+  if (active && payload && payload.length) {
+    return (
+      <div className="custom-tooltip">
+        <p className="label">{` ${payload[0].value}Kg`}</p>
+        <p className="label">{` ${payload[1].value}Kcal`}</p>
+      </div>
+    );
+  }
+
+  return null;
+};
 
 /**
  * Component used to display the bar chart of the weight/spending calories for one week
- * @param {session} sessions - the data of the chart 
+ * @param {session} sessions - the data of the chart
  * @returns {JSX} - the JSX of the WeightGraph component
  */
-const WeightGraph = ({ sessions }) => {    
-    return (
+const WeightGraph = ({ sessions }) => {
+  return (
     <div className="weight-wrapper">
       <h3 className="weight-title">Activité quotidienne</h3>
       <ResponsiveContainer className="weight-graph" width={"100%"} height={350}>
@@ -47,9 +46,9 @@ const WeightGraph = ({ sessions }) => {
           barGap={10}
           data={sessions}
           margin={{
-              top: 100,
-              bottom: 0,
-              left : 50,
+            top: 100,
+            bottom: 0,
+            left: 50,
           }}
         >
           <CartesianGrid strokeDasharray="2" vertical={false} />
@@ -91,7 +90,7 @@ const WeightGraph = ({ sessions }) => {
               position: "absolute",
               top: "50%",
               left: "0",
-              fontSize: '9px'
+              fontSize: "9px",
             }}
             content={<CustomTooltip />}
           />
@@ -110,29 +109,36 @@ const WeightGraph = ({ sessions }) => {
             fill="#E60000"
           />
           <Legend
-              width={250}
-              wrapperStyle={{ top: 30, left: '60%' }}
-              iconType="circle"
-              content={props => {
-                  const { payload } = props;
-                  return (
-                      <div className="legend">
-                          {payload.map((entry, index) => (
-                              <p key={`item-${index}`} className="legend-item">
-                                  <div className={entry.value === 'calories' ? 'dot-red' : 'dot-black'}> </div>
-                                  {entry.value === 'calories' ? 'Calories brûlées (Kcal)' : 'Poids (Kg)'}
-                              </p>
-                          ))}
+            width={250}
+            wrapperStyle={{ top: 30, left: "60%" }}
+            iconType="circle"
+            content={(props) => {
+              const { payload } = props;
+              return (
+                <div className="legend">
+                  {payload.map((entry, index) => (
+                    <p key={`item-${index}`} className="legend-item">
+                      <div
+                        className={
+                          entry.value === "calories" ? "dot-red" : "dot-black"
+                        }
+                      >
+                        {" "}
                       </div>
-                  );
-              }}
+                      {entry.value === "calories"
+                        ? "Calories brûlées (Kcal)"
+                        : "Poids (Kg)"}
+                    </p>
+                  ))}
+                </div>
+              );
+            }}
           />
         </BarChart>
       </ResponsiveContainer>
     </div>
-
-    )
-}
+  );
+};
 
 export default WeightGraph;
 
@@ -142,14 +148,16 @@ WeightGraph.propTypes = {
       day: PropTypes.string.isRequired,
       kilogram: PropTypes.number.isRequired,
       calories: PropTypes.number.isRequired,
-    }),
-  )
-}
+    })
+  ),
+};
 
 WeightGraph.defaultProps = {
-  sessions: [{
-    day: '',
-    kilogram: 0,
-    calories: 0,
-  }],
-}
+  sessions: [
+    {
+      day: "",
+      kilogram: 0,
+      calories: 0,
+    },
+  ],
+};

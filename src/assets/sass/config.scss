@@ -1,23 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=PT+Sans+Caption&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=PT+Sans+Caption&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Teko&display=swap");
 
-$black : #000;
-$red : #FF0000;
-$light-black : #282D30;
-$light-grey : #fbfbfb;
-$red-chart-bg : rgba(255, 1, 1, 0.7);
-$light-grey-chat-bg : rgba(196, 196, 196, 0.5);
+$black: #000;
+$red: #ff0000;
+$light-black: #282d30;
+$light-grey: #fbfbfb;
+$red-chart-bg: rgba(255, 1, 1, 0.7);
+$light-grey-chat-bg: rgba(196, 196, 196, 0.5);
 
-$width-gutter : 100px;
-$height-gutter : 70px;
+$width-gutter: 100px;
+$height-gutter: 70px;
 
-
-a{
-    color : white;
-    text-decoration: none;
+a {
+  color: white;
+  text-decoration: none;
 }
 
-*{
-    font-family: 'Roboto', sans-serif;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
 }

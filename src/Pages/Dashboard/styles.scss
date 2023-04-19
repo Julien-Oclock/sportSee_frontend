@@ -1,37 +1,36 @@
+@import "../../assets/sass/config.scss";
 
-    @import '../../assets/sass/config.scss';
+.main {
+  margin-left: 150px;
+  margin-top: 30px;
 
-.main{
-    margin-left: 150px;
-    margin-top: 30px;
-
-    &__title-aside{
-        margin: 25px 0px;
-    }
+  &__title-aside {
+    margin: 25px 0px;
+  }
 }
 
-.dashboard{
+.dashboard {
+  display: flex;
+
+  &__graph {
+    width: 80%;
+  }
+
+  &__inline-wrapper {
+    margin-top: 20px;
     display: flex;
-
-    &__graph{
-        width: 80%;
+    justify-content: space-around;
+    @media screen and (max-width: 1268px) {
+      margin-top: 70px;
     }
+  }
 
-    &__inline-wrapper{
-        margin-top: 20px;
-        display: flex;
-        justify-content: space-around;
-        @media screen and (max-width: 1268px){
-            margin-top: 70px;
-        }
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    @media screen and (max-width: 1268px) {
+      gap: 70px;
     }
-
-    &__cards{
-        display: flex;
-        flex-direction: column;
-        gap : 50px;
-        @media screen and (max-width: 1268px){
-            gap : 70px
-        }
-    }
+  }
 }

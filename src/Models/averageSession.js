@@ -10,7 +10,7 @@ class UserAverageSession {
   constructor(day, sessionLength) {
     /**
      * @property {string} day - The day of the session.
-     * @property {number} sessionLength - The average session length. 
+     * @property {number} sessionLength - The average session length.
      */
     this.day = day;
     this.sessionLength = sessionLength;
@@ -34,11 +34,11 @@ class AverageSessionData {
   /**
    * function used to add a session to the user's average session length
    * @param {day} day - the day of the session
-   * @param {sessionLength} sessionLength - the length of the session 
+   * @param {sessionLength} sessionLength - the length of the session
    */
   addSession(day, sessionLength) {
     this.sessions.push(new UserAverageSession(day, sessionLength));
   }
 }
 
-export {AverageSessionData, UserAverageSession};
+export { AverageSessionData, UserAverageSession };

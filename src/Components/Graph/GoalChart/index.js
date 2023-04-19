@@ -1,23 +1,21 @@
-import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from 'recharts'
-import PropTypes from 'prop-types';
-import './styles.scss'
-
+import { ResponsiveContainer, PieChart, Pie, Cell, Legend } from "recharts";
+import PropTypes from "prop-types";
+import "./styles.scss";
 
 /**
  * Component used to display the pie chart of the goal progression
- * @param {data} data - the data of the chart (daily goal progression for one user) 
- * @returns 
+ * @param {data} data - the data of the chart (daily goal progression for one user)
+ * @returns
  */
 function GoalChart({ data }) {
   console.log(data);
   const progression = data;
   const remainsToBeDone = 1 - progression;
   const dataGoal = [
-    { name: 'remainsToBeDone', value: remainsToBeDone },
-    { name: 'progression', value: progression },
-
+    { name: "remainsToBeDone", value: remainsToBeDone },
+    { name: "progression", value: progression },
   ];
-  const COLORS = ['#ffffff','#FF0000'];
+  const COLORS = ["#ffffff", "#FF0000"];
 
   /**
    * component used to display the legend of the pie chart
@@ -27,7 +25,9 @@ function GoalChart({ data }) {
     return (
       <div className="goalChart__legend">
         <p>
-          <span className="goalChart__percentage">{`${progression * 100}%`}</span>
+          <span className="goalChart__percentage">{`${
+            progression * 100
+          }%`}</span>
           <br />
           de votre
           <br />
@@ -41,10 +41,9 @@ function GoalChart({ data }) {
     <div className="goalChart chart-item">
       <h2>Score</h2>
       <ResponsiveContainer width="100%" height="100%">
-           
-        <PieChart
-          style={{ transform: 'rotate(-90deg)' }}>
-          <Pie className='goalChart__pie'
+        <PieChart style={{ transform: "rotate(-90deg)" }}>
+          <Pie
+            className="goalChart__pie"
             data={dataGoal}
             dataKey="value"
             nameKey="name"
@@ -54,14 +53,17 @@ function GoalChart({ data }) {
             labelLine={false}
           >
             {dataGoal.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+              <Cell
+                key={`cell-${index}`}
+                fill={COLORS[index % COLORS.length]}
+              />
             ))}
           </Pie>
-          <Legend 
+          <Legend
             content={<CustomizedLegend />}
-            align='center'
-            verticalAlign='middle'
-            layout='vertical'
+            align="center"
+            verticalAlign="middle"
+            layout="vertical"
           />
         </PieChart>
       </ResponsiveContainer>
@@ -73,8 +75,8 @@ export default GoalChart;
 
 GoalChart.propTypes = {
   data: PropTypes.number.isRequired,
-}
+};
 
 GoalChart.defaultProps = {
   data: 0,
-}
+};

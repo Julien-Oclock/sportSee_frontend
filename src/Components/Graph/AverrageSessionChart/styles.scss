@@ -1,40 +1,37 @@
-.averageSessionsChart{
+.averageSessionsChart {
   position: relative;
-  background-color: #FF0000;
+  background-color: #ff0000;
   width: 300px;
   height: 300px;
   padding: 10px;
   border-radius: 10px;
   padding: 10px;
 
-
-  @media screen and (max-width: 1268px){
+  @media screen and (max-width: 1268px) {
     width: 220px;
     height: 220px;
   }
 
-
-
-
-  h2{
-    color : white;
+  h2 {
+    color: white;
     font-size: 14px;
     position: relative;
-    top : 10px;
-    left : 10px;
+    top: 10px;
+    left: 10px;
     width: 70px;
     opacity: 0.5;
   }
 
-  .averageSessionsChart__customTooltip{
-
+  .averageSessionsChart__customTooltip {
     background-color: white;
     color: black;
     border: none;
     padding: 5px;
     font-size: 12px;
 
-    &:hover, &:focus, &:active{
+    &:hover,
+    &:focus,
+    &:active {
       border: none;
     }
   }
