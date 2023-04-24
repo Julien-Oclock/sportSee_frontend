@@ -6,6 +6,7 @@ const service = {
   api: apiCalls,
   mock: MockCall,
 };
+const currentEnv = process.env.REACT_APP_DATA === 'API' ?  service.api : service.mock
 
 export const SourceContext = createContext(service.api);
 
@@ -16,7 +17,7 @@ export const SourceContext = createContext(service.api);
  */
 const ServiceProvider = ({ children }) => {
   return (
-    <SourceContext.Provider value={{ source: service.mock }}>
+    <SourceContext.Provider value={{ source: currentEnv }}>
       {children}
     </SourceContext.Provider>
   );
