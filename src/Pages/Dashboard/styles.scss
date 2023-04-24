@@ -3,9 +3,15 @@
 .main {
   margin-left: 150px;
   margin-top: 30px;
+  @media screen and (max-width: 1268px) {
+    margin-top: 20px;
+  }
 
   &__title-aside {
     margin: 25px 0px;
+  }
+  &__firstname{
+    color : #ff0000;
   }
 }
 
@@ -21,7 +27,7 @@
     display: flex;
     justify-content: space-around;
     @media screen and (max-width: 1268px) {
-      margin-top: 70px;
+      margin-top: 10px;
     }
   }
 
