@@ -16,7 +16,7 @@ class UserPerformance {
   /**
    *
    * @param {Object} kind - The kind of performance
-   * @returns
+   * @returns {Object} - The data of the performance
    */
   getPerformanceValue(kind) {
     const dataItem = this.data.find((item) => item.kind === kind);

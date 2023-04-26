@@ -9,6 +9,7 @@ import LOGO4 from "../../assets/images/icon-sidebar4.png";
 
 /**
  * Component used to display the sidebar
+ * @component
  * @returns {JSX} - the JSX of the Sidebar component
  */
 const Sidebar = () => {

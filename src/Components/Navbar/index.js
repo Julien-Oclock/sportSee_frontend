@@ -6,6 +6,7 @@ import "./styles.scss";
 
 /**
  * Component used to display the navbar
+ * @component
  * @returns {JSX} - the JSX of the Navbar component
  */
 const Navbar = () => {

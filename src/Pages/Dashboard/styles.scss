@@ -9,6 +9,9 @@
 
   &__title-aside {
     margin: 25px 0px;
+    @media screen and (max-width: 1268px) {
+      margin: 10px 0;
+    }
   }
   &__firstname{
     color : #ff0000;
@@ -19,7 +22,10 @@
   display: flex;
 
   &__graph {
-    width: 80%;
+    width: 78%;
+    @media screen and (min-width: 2200px) {
+      width: 70%;
+    }
   }
 
   &__inline-wrapper {
@@ -27,16 +33,20 @@
     display: flex;
     justify-content: space-around;
     @media screen and (max-width: 1268px) {
-      margin-top: 10px;
+      margin-top: 70px;
     }
+    
   }
 
   &__cards {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 30px;
     @media screen and (max-width: 1268px) {
-      gap: 70px;
+      gap: 45px;
+    }
+    @media screen and (min-width: 2200px) {
+      margin-left: 10vw;
     }
   }
 }

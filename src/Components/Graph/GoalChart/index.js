@@ -4,11 +4,12 @@ import "./styles.scss";
 
 /**
  * Component used to display the pie chart of the goal progression
+ * @component
  * @param {data} data - the data of the chart (daily goal progression for one user)
- * @returns
- */
+ * @returns {JSX} - the JSX of the GoalChart component
+*/
 function GoalChart({ data }) {
-  console.log(data);
+
   const progression = data;
   const remainsToBeDone = 1 - progression;
   const dataGoal = [
@@ -19,6 +20,7 @@ function GoalChart({ data }) {
 
   /**
    * component used to display the legend of the pie chart
+   * @component
    * @returns {JSX} - the JSX of the CustomizedLegend component
    */
   const CustomizedLegend = () => {

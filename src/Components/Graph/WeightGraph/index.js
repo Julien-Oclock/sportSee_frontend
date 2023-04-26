@@ -34,6 +34,7 @@ const CustomTooltip = ({ active, payload }) => {
 
 /**
  * Component used to display the bar chart of the weight/spending calories for one week
+ * @component
  * @param {session} sessions - the data of the chart
  * @returns {JSX} - the JSX of the WeightGraph component
  */

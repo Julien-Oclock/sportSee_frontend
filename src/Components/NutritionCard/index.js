@@ -4,7 +4,8 @@ import PropTypes from "prop-types";
 import "./styles.scss";
 
 /**
- *
+ * Component used to display a card representing a nutrition
+ * @component
  * @param {imgUrl} imgUrl - the url of the image representing the type of the nutrition
  * @param {value} value - the value of the nutrition
  * @param {type} type - the type of the nutrition (ex: calories, protein, glucides )
