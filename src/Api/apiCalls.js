@@ -10,7 +10,6 @@ import api from "./Api.js";
 const apiCalls = {
   /**
    * Retrieves the main data of a user.
-   * @API
    * @async
    * @function
    * @param {string} id - The id of the user.

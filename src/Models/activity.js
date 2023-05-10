@@ -5,6 +5,7 @@
 class UserActivitySession {
   constructor(day, kilogram, calories) {
     /**
+     *
      * @property {string} day - The day of the session.
      * @property {number} kilogram - The weight of the user during the session.
      * @property {number} calories - The calories burned during the session.

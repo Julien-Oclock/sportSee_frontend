@@ -13,8 +13,8 @@ class UserPerformance {
     this.kind = kind;
     this.data = data;
   }
+
   /**
-   *
    * @param {Object} kind - The kind of performance
    * @returns {Object} - The data of the performance
    */

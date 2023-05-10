@@ -6,7 +6,7 @@ import "./styles.scss";
 
 /**
  * This component is used to display a custom tooltip for the AverageSessionsChart component
- * @component
+ * @component CustomTooltip
  * @param {boolean} active - true if the tooltip is active
  * @param {object} payload - the data of the tooltip
  * @returns {JSX} - the JSX of the CustomTooltip component
@@ -25,7 +25,7 @@ const CustomTooltip = ({ active, payload }) => {
 
 /**
  * Component used to display the line chart of the average sessions
- * @component
+ * @component AverageSessionsChart
  * @param {data} data - the data of the chart
  * @returns {JSX} - the JSX of the AverageSessionsChart component
  */

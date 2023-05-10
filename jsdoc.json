@@ -11,12 +11,16 @@
     "plugins": ["plugins/markdown"],
     "templates": {
       "better-docs": {
-        "name": "React components"
+        "name": "React components",
+        "tags": {
+          "allowUnknownTags": ["component"]
+      }
       }
     },
     "opts": {
       "destination": "docs",
       "recurse": true,
-      "readme": "README.md"
+      "readme": "README.md",
+        "template": "node_modules/better-docs"
     }
   }

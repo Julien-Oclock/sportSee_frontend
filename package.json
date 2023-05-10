@@ -12,7 +12,8 @@
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "recharts": "^2.5.0",
-    "sass": "^1.59.3"
+    "sass": "^1.59.3",
+    "taffydb": "^2.7.3"
   },
   "scripts": {
     "start": "cross-env REACT_APP_DATA=API react-scripts start",
@@ -20,7 +21,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "docs": "jsdoc -c jsdoc.conf.json"
+    "docs": "jsdoc -c jsdoc.json"
   },
   "eslintConfig": {
     "extends": [
